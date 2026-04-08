@@ -1,13 +1,36 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-  //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-  // to see how IntelliJ IDEA suggests fixing it.
-  IO.println(String.format("Hello and welcome!"));
+import java.util.*;
 
-  for (int i = 1; i <= 5; i++) {
-    //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-    // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-    IO.println("i = " + i);
-  }
+class BankAccount {
+    int accountNumber;
+    String username;
+    double balance;
+
+    public BankAccount(int accountNumber, String username, double balance) {
+        this.accountNumber = accountNumber;
+        this.username = username;
+        this.balance = balance;
+    }
+
+    public BankAccount(String username, double balance) {
+        this.username = username;
+        this.balance = balance;
+    }
+
+    public BankAccount(String username) {
+        this.username = username;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        LinkedList<BankAccount> accounts = new LinkedList<>();
+
+        accounts.add(new BankAccount(1, "Ali", 150000));
+        accounts.add(new BankAccount(2, "Sara", 220000));
+
+        for (BankAccount acc : accounts) {
+            System.out.println(acc.username + " – Balance: " + acc.balance);
+        }
+    }
 }
